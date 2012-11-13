@@ -1,5 +1,7 @@
 # FormObject
 
+[![Build Status](https://travis-ci.org/saratovsource/form_object.png)](https://travis-ci.org/saratovsource/form_object)
+
 TODO: Write a gem description
 
 ## Installation
