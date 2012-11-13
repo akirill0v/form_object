@@ -8,9 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = FormObject::VERSION
   gem.authors       = ["Kirillov Alexander"]
   gem.email         = ["saratovsource@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = "Form objects for ruby on rails applications."
+  gem.summary       = "Form object implementation"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
