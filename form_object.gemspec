@@ -11,8 +11,13 @@ Gem::Specification.new do |gem|
   gem.description   = "Form objects for ruby on rails applications."
   gem.summary       = "Form object implementation"
 
+  gem.rubyforge_project = "form_object"
+
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  gem.add_dependency 'virtus'
+  gem.add_dependency 'activemodel'
 end
