@@ -5,4 +5,4 @@ gemspec
 
 gem 'rake'
 gem 'minitest'
-gem 'tconsole'
+gem 'turn'
