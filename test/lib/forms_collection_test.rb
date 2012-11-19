@@ -6,6 +6,5 @@ class FormsCollectionTest < TestCase
   end
 
   def test_should_model_have_forms_collection
-    
   end
 end

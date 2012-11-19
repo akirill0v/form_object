@@ -6,3 +6,9 @@ gemspec
 gem 'rake'
 gem 'minitest'
 gem 'turn'
+
+group :test do
+  gem 'sqlite3'
+  gem 'activemodel'
+  gem 'activerecord'
+end
