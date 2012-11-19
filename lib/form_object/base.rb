@@ -9,5 +9,8 @@ module FormObject
     # Forms are never themselves persisted
     def persisted?; false; end  
 
+    def model
+      nil
+    end
   end
 end
