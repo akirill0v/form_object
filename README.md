@@ -30,9 +30,10 @@ end
 # attributes => {email: "test@example.com", name: "name"}
 ```
 
-Define form:
+Define forms:
 
 ``` ruby
+# For base auth
 class BaseAuthForm < FormObject:Base
   map_model User, as: :base_auth
   attribute :email, String # => map form attribute to model attribute
@@ -40,6 +41,7 @@ class BaseAuthForm < FormObject:Base
   validates :email, presence: true # => validate email in form ONLY!
 end
 
+# For any other auth
 class TwitterAuthForm < FormObject:Base
   map_model User      # name => twitter_auth (name will be generated 
                       # automatically from class name)
@@ -53,6 +55,8 @@ In any place:
   @user = User.find(params[:id])
   @form = @user.forms[:base_auth] # This retrive BaseAuthForm instance
                                   # with attributes from model
+  @form.assign_attributes(params[:user]) # assign attributes from hash
+
   if @form.valid?
     @form.persist_model           # TODO: maby other method name?
   end
