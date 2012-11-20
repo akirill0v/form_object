@@ -32,8 +32,8 @@ module FormObject
     # == Examples:
     #    
     #    FormObject::Integrations.find_by_name(:active_record) # => FormObject::Integrations::ActiveRecord
-    def find_by_name( name )
-      
+    def self.find_by_name( name )
+      all.detect {|integration| integration.integration_name == name} || raise( InvalidIntegration.new(name) )
     end
 
     def self.all
@@ -41,7 +41,7 @@ module FormObject
       constants = self.constants.map {|c| c.to_s}
                                 .select {|c| c != 'ActiveModel'}
                                 .sort <<          'ActiveModel'
-      constants
+      constants.map {|c| const_get(c)}
     end
   end
 end
