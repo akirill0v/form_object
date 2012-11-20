@@ -34,7 +34,7 @@ Define forms:
 
 ``` ruby
 # For base auth
-class BaseAuthForm < FormObject:Base
+class BaseAuthForm < FormObject::Base
   map_model User, as: :base_auth
   attribute :email, String # => map form attribute to model attribute
 
@@ -42,7 +42,7 @@ class BaseAuthForm < FormObject:Base
 end
 
 # For any other auth
-class TwitterAuthForm < FormObject:Base
+class TwitterAuthForm < FormObject::Base
   map_model User      # name => twitter_auth (name will be generated 
                       # automatically from class name)
                       # There is nothing to validate
