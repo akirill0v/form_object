@@ -30,6 +30,14 @@ module FormObject
           []
         end
 
+        def matches?( klass )
+          matches_ancestors?(klass.ancestors.map(&:name))
+        end
+
+        def matches_ancestors?( ancestors )
+          (ancestors & matching_ancestors).any?
+        end
+
         def versions
           @versions ||= []
         end

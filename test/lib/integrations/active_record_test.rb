@@ -12,5 +12,9 @@ module Integrations
       assert_equal FormObject::Integrations::ActiveRecord, FormObject::Integrations.find_by_name(@integration_name)
     end
 
+    def test_should_match_active_record_integration
+      assert_equal FormObject::Integrations::ActiveRecord, FormObject::Integrations.match(User)
+    end
+
   end
 end

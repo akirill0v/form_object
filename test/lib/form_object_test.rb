@@ -21,7 +21,7 @@ class FormObjectTest < TestCase
 
   def test_should_be_invalid_with_empty_query
     @form.query = ""
-    assert !@form.valid?
+    assert @form.invalid?
   end
 
   def test_should_have_not_nil_created_at_attribute

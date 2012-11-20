@@ -24,7 +24,7 @@ module FormObject
     #    FormObject::Integrations.match(User) # => nil
     #    FormObject::Integrations.match(ActiveRecordUser) # => FormObject::Integrations::ActiveRecord
     def self.match( klass )
-      
+      all.detect {|integration| integration.matches?(klass)}
     end
 
     # Find integration by name
