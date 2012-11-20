@@ -10,7 +10,7 @@ module FormObject
     
     def map_for_model( form, model, options = {})
       form_name = retrive_form_name(model, options.delete(:name))
-      storage[form] = FormObject::Base::Metadata.new(model: model, name: form_name, options: options)
+      storage[form] = FormObject::Base::Metadata.new( model, form_name, options )
     end
 
     def []( form )
