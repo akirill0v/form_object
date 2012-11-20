@@ -25,7 +25,7 @@ class FormObjectTest < TestCase
   end
 
   def test_should_have_not_nil_created_at_attribute
-    assert @form.created_at.kind_of?(DateTime)
+    assert_kind_of DateTime, @form.created_at
     assert @form.created_at.present?
   end
 

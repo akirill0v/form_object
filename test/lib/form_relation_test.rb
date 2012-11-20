@@ -8,7 +8,7 @@ class FormRelationTest < TestCase
 
   def test_should_not_form_get_model
     assert_respond_to @form, :model
-    assert @form.model.nil?
+    assert_nil @form.model
   end
 
 end
