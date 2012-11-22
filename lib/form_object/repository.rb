@@ -5,21 +5,17 @@ module FormObject
     include Singleton
 
     def storage
-      @storage ||= Hash.new
+      @storage ||= Set.new
     end
     
     def map_for_model( form, model, options = {})
       form_name = retrive_form_name(form, options.delete(:as))
-      storage[form] = FormObject::Base::Metadata.new( model, form_name, options )
+      storage << FormObject::Base::Metadata.new(form, model, form_name, options )
       include_integration( model )
     end
 
-    def []( form )
-      storage[form]
-    end
-
-    def find_form(critery = {})
-      storage.values.select{|meta| meta.match?(critery)}
+    def find(critery = {})
+      storage.select{|meta| meta.match?(critery)}
     end
 
     private
