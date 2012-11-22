@@ -3,7 +3,7 @@ module FormObject
     module InstanceMethods
 
       def model
-        self.class.repository[self.class].try(:model)
+        self.class.model# 
       end
     end
   end
