@@ -79,7 +79,7 @@ module FormObject
 
         # Forms hash for current model
         def forms
-          @forms ||= FormObject::Repository.instance.find_form(model: self.class).inject({}){|c, i| c[i.name] = i; c}
+          @forms ||= FormObject::Collection.new(self)
         end
 
       end
