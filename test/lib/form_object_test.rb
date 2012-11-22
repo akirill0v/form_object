@@ -4,6 +4,7 @@ class FormObjectTest < TestCase
   def setup
     @form = Filter.new(query: "find me")
     @base_form = BaseAuthForm.new(email: "test@example.com", name: "test")
+    @twitter_form = TwitterAuthForm.new
   end
 
   def test_should_form_not_persisted
@@ -35,6 +36,7 @@ class FormObjectTest < TestCase
 
   def test_form_should_have_name
     assert_equal :base_auth, @base_form.class.form_name
+    assert_equal :twitter_auth, @twitter_form.class.form_name
   end
 
 end
