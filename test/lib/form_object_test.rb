@@ -30,7 +30,7 @@ class FormObjectTest < TestCase
   end
 
   def test_base_form_have_a_model
-    assert_equal User, @base_form.model
+    assert_equal User, @base_form.class.model
   end
 
   def test_form_should_have_name
