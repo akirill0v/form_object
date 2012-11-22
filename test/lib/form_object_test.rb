@@ -33,4 +33,8 @@ class FormObjectTest < TestCase
     assert_equal User, @base_form.model
   end
 
+  def test_form_should_have_name
+    assert_equal :base_auth, @base_form.class.form_name
+  end
+
 end

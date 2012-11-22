@@ -10,11 +10,7 @@ module FormObject
         # The name of integration
         def integration_name
           @integration_name ||= begin
-            name = self.name.split('::').last
-            name.gsub!(/([A-Z]+)([A-Z][a-z])/,'\1_\2')
-            name.gsub!(/([a-z\d])([A-Z])/,'\1_\2')
-            name.downcase!
-            name.to_sym
+            FormObject::Utils::StringConverter.integration_name(self.name).to_sym
           end
         end
 

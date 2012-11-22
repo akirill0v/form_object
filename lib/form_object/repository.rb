@@ -9,7 +9,7 @@ module FormObject
     end
     
     def map_for_model( form, model, options = {})
-      form_name = retrive_form_name(model, options.delete(:name))
+      form_name = retrive_form_name(form, options.delete(:as))
       storage[form] = FormObject::Base::Metadata.new( model, form_name, options )
     end
 
@@ -19,8 +19,8 @@ module FormObject
 
     private
 
-    def retrive_form_name( model, name )
-      name ||= model.class.name
+    def retrive_form_name( form, name )
+      name ||= form.form_name
     end
   end
 end

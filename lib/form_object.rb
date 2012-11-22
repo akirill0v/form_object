@@ -3,6 +3,7 @@ require 'virtus'
 require 'active_model'
 
 module FormObject
+  autoload :Utils,        'form_object/utils'
   autoload :Base,         'form_object/base'
   autoload :Metadata,     'form_object/base/metadata'
   autoload :Repository,   'form_object/repository'
