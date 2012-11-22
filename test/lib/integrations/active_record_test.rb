@@ -6,6 +6,7 @@ module Integrations
     # Test setup
     def setup
       @integration_name = :active_record
+      @user = User.new email: "test@example.com"
     end
 
     def test_should_integration_finded_by_name
@@ -14,6 +15,11 @@ module Integrations
 
     def test_should_match_active_record_integration
       assert_equal FormObject::Integrations::ActiveRecord, FormObject::Integrations.match(User)
+    end
+
+    def test_should_have_base_auth_form_instance_for_user_model
+      form = @user.forms[:base_auth]
+      assert form
     end
 
   end

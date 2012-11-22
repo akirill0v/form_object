@@ -7,6 +7,8 @@ class IntegrationsTest < TestCase
       FormObject::Integrations::ActiveModel,
       FormObject::Integrations::ActiveRecord
     ]
+    @base_form = BaseAuthForm.new(email: "test@example.com", name: "test")
+    @twitter_form = TwitterAuthForm.new
   end
 
   def test_integrations_should_bee
@@ -14,4 +16,5 @@ class IntegrationsTest < TestCase
       assert_includes @integrations, integration
     end
   end
+
 end

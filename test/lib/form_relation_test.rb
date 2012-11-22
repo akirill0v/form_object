@@ -11,4 +11,8 @@ class FormRelationTest < TestCase
     assert_nil @form.model
   end
 
+  def test_model_should_have_forms
+    assert @model.forms[:base_auth]
+  end
+
 end

@@ -75,10 +75,20 @@ module FormObject
         
       end
 
+      module InstanceMethods
+
+        # Forms hash for current model
+        def forms
+          @forms ||= FormObject::Repository.instance.find_form(model: self.class).inject({}){|c, i| c[i.name] = i; c}
+        end
+
+      end
+
       extend ClassMethods
     
       def self.included(receiver)
         receiver.class_eval { extend ClassMethods }
+        receiver.class_eval { include InstanceMethods }
       end
     end
   end

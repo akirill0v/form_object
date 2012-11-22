@@ -18,6 +18,7 @@ module FormObject
       def self.matching_ancestors
         %w{ActiveRecord::Base}
       end
+
     end
   end
 end

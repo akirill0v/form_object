@@ -2,8 +2,8 @@ module FormObject
   module Dsl
     module ClassMethods
       
-      def map_model( model, options = {} )
-        repository.map_for_model( self, model, options )
+      def map_model( model_class, options = {} )
+        repository.map_for_model( self, model_class, options )
       end
 
       def form_name
@@ -17,7 +17,7 @@ module FormObject
       protected
 
       def repository
-        @repository ||= FormObject::Repository.instance
+        FormObject::Repository.instance
       end
 
     end
