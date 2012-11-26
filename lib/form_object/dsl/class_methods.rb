@@ -11,7 +11,7 @@ module FormObject
       end
 
       def model
-        repository.find(model: self).first.try(:model)
+        repository.find(form: self).first.try(:model)
       end
 
       protected
