@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class RepositoryTest < TestCase
+class StoreTest < TestCase
 
   def setup
-    @repo = FormObject::Repository.instance
+    @repo = FormObject::Store.instance
   end
 
   def test_should_have_base_auth_in_collection

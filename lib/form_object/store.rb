@@ -1,7 +1,7 @@
 require 'singleton'
 
 module FormObject
-  class Repository
+  class Store
     include Singleton
 
     def storage

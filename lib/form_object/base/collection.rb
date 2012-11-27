@@ -14,11 +14,12 @@ module FormObject
     protected
 
     def find_form_classes
-      FormObject::Repository.instance.find(model: @model.class).inject({}){|c, i| c[i.name] = i; c}
+      FormObject::Store.instance.find(model: @model.class).inject({}){|c, i| c[i.name] = i; c}
     end
 
     def build_form_instance( name )
       form_class = @form_classes[name].form
+      form_class
     end
   end
 end
