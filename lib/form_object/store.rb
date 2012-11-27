@@ -15,7 +15,7 @@ module FormObject
     end
 
     def find(critery = {})
-      storage.select{|meta| meta.match?(critery)}
+      storage.select{|mapping_info| mapping_info.match?(critery)}
     end
 
     private

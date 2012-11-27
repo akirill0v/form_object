@@ -2,8 +2,9 @@ require 'test_helper'
 
 class FormRelationTest < TestCase
   def setup
+    @attributes = { email: "test@example.com", name: "name" }
     @form = Filter.new(query: "find me")
-    @model = User.new(email: "test@example.com", name: "name")
+    @model = User.new(@attributes)
   end
 
   def test_should_not_form_get_model
@@ -12,7 +13,13 @@ class FormRelationTest < TestCase
   end
 
   def test_model_should_have_forms
-    assert @model.forms[:base_auth]
+    base_auth_form = @model.forms[:base_auth]
+    assert @attributes[:email], base_auth_form.email
+  end
+
+  def test_model_hould_not_have_undefined_inForm_field
+    base_auth_form = @model.forms[:base_auth]
+    assert !base_auth_form.respond_to?( :name )
   end
 
 end

@@ -1,6 +1,8 @@
 module FormObject
   class Base
-    require 'form_object/base/mapping_information'
+    autoload :Collection,         'form_object/base/collection'
+    autoload :MappingInformation, 'form_object/base/mapping_information'
+    autoload :FormBuilder,        'form_object/base/form_builder'
     include Virtus
 
     extend ActiveModel::Naming

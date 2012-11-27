@@ -79,7 +79,7 @@ module FormObject
 
         # Forms hash for current model
         def forms
-          @forms ||= FormObject::Collection.new(self)
+          @forms ||= FormObject::Base::Collection.new(self)
         end
 
       end

@@ -1,5 +1,12 @@
 module FormObject
-  class Collection
+
+  class MappingInformationNotFound < RuntimeError
+    def initialize( critery )
+      super "#{critery.inspect} not found"
+    end
+  end
+
+  class Base::Collection
     attr_reader :model, :form_classes
     
     def initialize( model )
@@ -18,8 +25,9 @@ module FormObject
     end
 
     def build_form_instance( name )
-      form_class = @form_classes[name].form
-      form_class
+      mapping_information = @form_classes[name]
+      raise MappingInformationNotFound.new(mapping_information) if mapping_information.nil?
+      FormObject::Base::FormBuilder.new(mapping_information, @model.attributes).build
     end
   end
 end
