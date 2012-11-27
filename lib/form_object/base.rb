@@ -1,6 +1,6 @@
 module FormObject
   class Base
-    require 'form_object/base/metadata'
+    require 'form_object/base/mapping_information'
     include Virtus
 
     extend ActiveModel::Naming
