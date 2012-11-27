@@ -53,7 +53,7 @@ In any place:
 
 ``` ruby
   @user = User.find(params[:id])
-  @form = @user.forms[:base_auth] # This retrive BaseAuthForm instance
+  @form = @user.form( :base_auth ) # This retrive BaseAuthForm instance
                                   # with attributes from model
   @form.assign_attributes(params[:user]) # assign attributes from hash
 

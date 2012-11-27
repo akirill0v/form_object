@@ -18,7 +18,7 @@ module Integrations
     end
 
     def test_should_have_base_auth_form_instance_for_user_model
-      form = @user.forms[:base_auth]
+      form = @user.form( :base_auth )
       assert form, "base_auth form is nil!"
     end
 

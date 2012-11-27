@@ -82,6 +82,11 @@ module FormObject
           @forms ||= FormObject::Base::Collection.new(self)
         end
 
+        # Get form by given name
+        def form( name )
+          forms[name]
+        end
+
       end
 
       extend ClassMethods
