@@ -58,7 +58,7 @@ In any place:
   @form.assign_attributes(params[:user]) # assign attributes from hash
 
   if @form.valid?
-    @form.persist_model           # TODO: maby other method name?
+    @form.persist_model           # TODO: maybe other method name?
   end
 ```
 
