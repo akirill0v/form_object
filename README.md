@@ -62,6 +62,11 @@ In any place:
   end
 ```
 
+## Can I help you?
+
+Discuss the existing features and offer new features you can
+[here](https://groups.google.com/d/forum/formobject "FormObject").
+
 ## Contributing
 
 1. Fork it
