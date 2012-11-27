@@ -1,7 +1,7 @@
 require 'singleton'
 
 module FormObject
-  class Repository
+  class Store
     include Singleton
 
     def storage
@@ -10,7 +10,7 @@ module FormObject
     
     def map_for_model( form, model, options = {})
       form_name = retrive_form_name(form, options.delete(:as))
-      storage << FormObject::Base::Metadata.new(form, model, form_name, options )
+      storage << FormObject::Base::MappingInformation.new(form, model, form_name, options )
       include_integration( model )
     end
 
