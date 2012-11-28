@@ -9,7 +9,9 @@ class FormRelationTest < TestCase
 
   def test_should_not_form_get_model
     assert_respond_to @form, :model
-    assert_nil @form.model
+    assert_raises FormObject::ModelUndefinedError do
+      @form.model
+    end
   end
 
   def test_model_should_have_forms

@@ -22,5 +22,18 @@ module Integrations
       assert form, "base_auth form is nil!"
     end
 
+    def test_form_should_have_attributes_from_model
+      form = @user.form( :base_auth )
+      assert_equal @user.email, form.email
+    end
+
+    def test_should_form_get_model_with_new_attributes
+      form = @user.form( :base_auth )
+      new_user_email = "user@example.com"
+      form.attributes = {email: new_user_email}
+      model = form.model
+      assert_equal new_user_email, model.email
+    end
+
   end
 end

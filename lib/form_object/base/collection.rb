@@ -27,7 +27,7 @@ module FormObject
     def build_form_instance( name )
       mapping_information = @form_classes[name]
       raise MappingInformationNotFound.new(mapping_information) if mapping_information.nil?
-      FormObject::Base::FormBuilder.new(mapping_information, @model.attributes).build
+      FormObject::Base::FormBuilder.new(mapping_information, @model).build
     end
   end
 end

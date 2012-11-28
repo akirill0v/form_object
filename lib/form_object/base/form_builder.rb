@@ -1,9 +1,9 @@
 module FormObject
   class Base::FormBuilder
-    attr_reader :mapping_information, :attributes
+    attr_reader :mapping_information, :model
 
-    def initialize( mapping_information, attributes = {} )
-      @mapping_information, @attributes = mapping_information, attributes
+    def initialize( mapping_information, model )
+      @mapping_information, @model = mapping_information, model
     end
 
     def build
@@ -13,15 +13,15 @@ module FormObject
     protected
 
     def form_instance
-      @form_instance ||= assign_attributes(empty_form)
+      @form_instance ||= assign_model_attributes(empty_form)
     end
 
     def empty_form
       @mapping_information.form.new
     end
 
-    def assign_attributes( form_instance )
-      form_instance.attributes = @attributes
+    def assign_model_attributes( form_instance )
+      form_instance.assign_model( @model )
       form_instance
     end
 

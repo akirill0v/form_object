@@ -2,14 +2,17 @@ Features list
 
 * Features
   - Model:
-    - Get the FormObject with filled attributes
-    - Forms collection for retrive named form
+    + Get the FormObject instance with filled attributes
+    + Forms collection for retrive named form
   - FormObject:
     - Get the model with filled attributes
     - Create builder for markup (form_for, simple_form_for, etc...)
 
 * Integrations
-  - ActiveRecord
+  +/- ActiveModel
+  +/- ActiveRecord
   - Mongoid
   - DataMapper 1.x
   - DataMapper 2.x
+  - Validations
+    - Move validations in the appropriate integration

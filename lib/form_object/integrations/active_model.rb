@@ -15,6 +15,14 @@ module FormObject
       def self.maching_ancestors
         %w{ActiveModel ActiveModel::Observing ActiveModel::Validations}
       end
+
+      def assign_form_object_attributes( form )
+        self.assign_attributes( form.attributes )
+      end
+
+      def form_object_attributes
+        self.attributes
+      end
       
     end
   end
