@@ -3,12 +3,17 @@ require 'virtus'
 require 'active_model'
 
 module FormObject
-  autoload :Utils,        'form_object/utils'
-  autoload :Base,         'form_object/base'
-  autoload :Metadata,     'form_object/base/metadata'
-  autoload :Collection,   'form_object/base/collection'
-  autoload :Repository,   'form_object/repository'
-  autoload :Dsl,          'form_object/dsl'
-  autoload :Integrations, 'form_object/integrations'
+
+  class ModelUndefinedError < RuntimeError
+    def initialize( form )
+      super "Model not defined for #{form.inspect}"
+    end
+  end
+
+  autoload :Utils,                  'form_object/utils'
+  autoload :Integrations,           'form_object/integrations'
+  autoload :Base,                   'form_object/base'
+  autoload :Store,                  'form_object/store'
+  autoload :Dsl,                    'form_object/dsl'
   # Your code goes here...
 end

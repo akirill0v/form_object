@@ -66,6 +66,10 @@ module FormObject
           mod
         end
 
+        def assign_model_attributes( form_instance, model_instance )
+          form_instance.attributes = model_instance.attributes
+        end
+
         # Extend only active versions
         def extended( base )
           versions.select(&:active?).each do |version|
@@ -79,8 +83,18 @@ module FormObject
 
         # Forms hash for current model
         def forms
-          @forms ||= FormObject::Collection.new(self)
+          @forms ||= FormObject::Base::Collection.new(self)
         end
+
+        # Get form by given name
+        def form( name )
+          forms[name]
+        end
+
+        def form_object_attributes
+          Hash.new
+        end
+
 
       end
 

@@ -1,14 +1,5 @@
 language: ruby
 rvm:
-  - 1.9.2
   - 1.9.3
-env:
-  - INTEGRATION=default
-  - INTEGRATION=active_model
-  - INTEGRATION=active_record
-  - INTEGRATION=data_mapper
-  - INTEGRATION=mongoid
-  - INTEGRATION=mongo_mapper
-  - INTEGRATION=sequel
 notifications:
   disabled: true

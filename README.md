@@ -53,14 +53,19 @@ In any place:
 
 ``` ruby
   @user = User.find(params[:id])
-  @form = @user.forms[:base_auth] # This retrive BaseAuthForm instance
+  @form = @user.form( :base_auth ) # This retrive BaseAuthForm instance
                                   # with attributes from model
   @form.assign_attributes(params[:user]) # assign attributes from hash
 
   if @form.valid?
-    @form.persist_model           # TODO: maby other method name?
+    @form.persist_model           # TODO: maybe other method name?
   end
 ```
+
+## Can I help you?
+
+Discuss the existing features and offer new features you can
+[here](https://groups.google.com/d/forum/formobject "FormObject").
 
 ## Contributing
 

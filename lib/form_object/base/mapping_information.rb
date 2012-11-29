@@ -1,6 +1,6 @@
 module FormObject
   class Base
-    Metadata = Struct.new(:form, :model, :name, :options) do
+    MappingInformation = Struct.new(:form, :model, :name, :options) do
 
       def match?( critery = {} )
         critery.each do |k, v|

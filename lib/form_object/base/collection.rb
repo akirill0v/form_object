@@ -1,5 +1,12 @@
 module FormObject
-  class Collection
+
+  class MappingInformationNotFound < RuntimeError
+    def initialize( critery )
+      super "#{critery.inspect} not found"
+    end
+  end
+
+  class Base::Collection
     attr_reader :model, :form_classes
     
     def initialize( model )
@@ -14,11 +21,13 @@ module FormObject
     protected
 
     def find_form_classes
-      FormObject::Repository.instance.find(model: @model.class).inject({}){|c, i| c[i.name] = i; c}
+      FormObject::Store.instance.find(model: @model.class).inject({}){|c, i| c[i.name] = i; c}
     end
 
     def build_form_instance( name )
-      form_class = @form_classes[name].form
+      mapping_information = @form_classes[name]
+      raise MappingInformationNotFound.new(mapping_information) if mapping_information.nil?
+      FormObject::Base::FormBuilder.new(mapping_information, @model).build
     end
   end
 end
