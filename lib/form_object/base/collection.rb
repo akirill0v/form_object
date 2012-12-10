@@ -14,6 +14,7 @@ module FormObject
       @form_classes = find_form_classes
     end
 
+    # Form instance with assigned attributes
     def []( name )
       build_form_instance(name)
     end
