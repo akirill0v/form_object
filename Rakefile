@@ -1,6 +1,7 @@
 require "bundler/gem_tasks"
 
 require 'rake/testtask'
+require 'cucumber/rake/task'
 
 Rake::TestTask.new do |t|
   t.libs << "test"
@@ -8,4 +9,11 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
-task :default => :test
+Cucumber::Rake::Task.new(:cucumber) do |t|
+  t.fork = true
+  t.cucumber_opts = ['--format', (ENV['CUCUMBER_FORMAT'] || 'progress')]
+end
+
+task test_suite: [:test, :cucumber]
+
+task default: :test_suite
