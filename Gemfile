@@ -10,6 +10,7 @@ gem 'minitest'
 gem 'turn'
 gem 'cucumber', '~> 1.0.0'
 gem 'aruba'
+gem 'coveralls', require: false
 
 group :test do
   gem 'sqlite3'
