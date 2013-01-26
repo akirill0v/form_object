@@ -11,7 +11,7 @@ module FormObject
     def map_for_model( form, model, options = {})
       form_name = retrive_form_name(form, options.delete(:as))
       storage << FormObject::Base::MappingInformation.new(form, model, form_name, options )
-      include_integration( model )
+      include_integration( form, model )
     end
 
     def find(critery = {})
@@ -24,9 +24,12 @@ module FormObject
       name ||= form.form_name
     end
 
-    def include_integration( model_class )
+    def include_integration( form, model_class )
       integration = FormObject::Integrations.match(model_class)
-      model_class.send(:include, integration) unless integration.nil?
+      unless integration.nil?
+        integration.integrate_form form
+        model_class.send(:include, integration)
+      end
     end
   end
 end

@@ -2,19 +2,12 @@ module FormObject
   module Integrations
     module ActiveModel
 
-      def self.included( base ) #:nodoc:
-        base.versions.unshift(*versions)
-      end
+      @defaults = {}
 
       include Base
       extend ClassMethods
       require 'form_object/integrations/active_model/versions'
 
-      @defaults = {}
-
-      def self.maching_ancestors
-        %w{ActiveModel ActiveModel::Observing ActiveModel::Validations}
-      end
 
       def assign_form_object_attributes( form )
         self.assign_attributes( form.attributes )
@@ -23,7 +16,23 @@ module FormObject
       def form_object_attributes
         self.attributes
       end
-      
+      class << self
+
+        def included( base ) #:nodoc:
+          base.versions.unshift(*versions)
+        end
+
+        def maching_ancestors
+          %w{ActiveModel ActiveModel::Observing ActiveModel::Validations}
+        end
+
+        def integrate_form form
+          form.class_eval do
+            include ::ActiveModel::Validations
+          end
+        end
+      end
     end
+
   end
 end
