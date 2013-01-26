@@ -7,8 +7,8 @@ When /^I add "([^"]+)" as a dependency$/ do |gem_name|
 end
 
 Given /^I have a site set up$/ do
-  When %{I successfully run `bundle exec rails new testapp`}
-  And %{I cd to "testapp"}
-  When %{I successfully run `bundle install`}
+  step %{I successfully run `bundle exec rails new testapp`}
+  step %{I cd to "testapp"}
+  step %{I successfully run `bundle install`}
 end
 

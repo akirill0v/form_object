@@ -15,5 +15,4 @@ Cucumber::Rake::Task.new(:cucumber) do |t|
 end
 
 task test_suite: [:test, :cucumber]
-
 task default: :test_suite

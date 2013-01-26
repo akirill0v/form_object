@@ -8,8 +8,8 @@ gem 'rails', '~> 3.2.0'
 gem 'rake'
 gem 'minitest'
 gem 'turn'
-gem 'cucumber', '~> 1.0.0'
-gem 'aruba'
+gem 'cucumber', github: 'cucumber/cucumber'
+gem 'aruba', github: 'cucumber/aruba'
 gem 'tconsole'
 gem 'coveralls', require: false
 
