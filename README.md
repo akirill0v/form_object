@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/saratovsource/form_object.png)](https://travis-ci.org/saratovsource/form_object)
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/saratovsource/form_object)
-[![Coveralls](https://coveralls.io/repos/saratovsource/form_object/badge.png?branch=master)](https://coveralls.io/r/saratovsource/form_object)
+[![Coveralls](https://coveralls.io/repos/saratovsource/form_object/badge.png?branch=develop)](https://coveralls.io/r/saratovsource/form_object)
 
 TODO: Write a gem description
 
