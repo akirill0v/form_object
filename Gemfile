@@ -11,6 +11,7 @@ gem 'turn'
 gem 'cucumber', github: 'cucumber/cucumber'
 gem 'aruba', github: 'cucumber/aruba'
 gem 'tconsole'
+gem 'simplecov', require: false
 gem 'coveralls', require: false
 
 group :test do
