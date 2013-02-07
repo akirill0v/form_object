@@ -8,7 +8,7 @@ class FormObjectTest < TestCase
   end
 
   def test_should_form_not_persisted
-    assert !@form.persisted?
+    refute @form.persisted?
   end
 
   def test_form_should_have_query_attribute
