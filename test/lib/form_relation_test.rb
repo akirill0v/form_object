@@ -9,7 +9,7 @@ class FormRelationTest < TestCase
 
   def test_should_not_form_get_model
     assert_respond_to @form, :model
-    assert_nil @form.model
+    refute @form.model
   end
 
   def test_model_should_have_forms
@@ -19,7 +19,7 @@ class FormRelationTest < TestCase
 
   def test_model_hould_not_have_undefined_inForm_field
     base_auth_form = @model.forms[:base_auth]
-    assert !base_auth_form.respond_to?( :name )
+    refute base_auth_form.respond_to?( :name )
   end
 
 end
