@@ -18,9 +18,9 @@ class BaseAuthForm < FormObject::Base
 
   attribute :email, String
 
-  validates :email, :presence => true
+  validates :email, presence: true
 end
 
 class TwitterAuthForm < FormObject::Base
-  map_model User, :as => :twitter
+  map_model User, as: :twitter
 end

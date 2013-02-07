@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/saratovsource/form_object.png)](https://travis-ci.org/saratovsource/form_object)
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/saratovsource/form_object)
+[![Dependency Status](https://gemnasium.com/saratovsource/form_object.png)](https://gemnasium.com/saratovsource/form_object)
+[![Coveralls](https://coveralls.io/repos/saratovsource/form_object/badge.png?branch=develop)](https://coveralls.io/r/saratovsource/form_object)
 
 TODO: Write a gem description
 
@@ -53,7 +55,7 @@ In any place:
 
 ``` ruby
   @user = User.find(params[:id])
-  @form = @user.forms[:base_auth] # This retrive BaseAuthForm instance
+  @form = @user.form( :base_auth ) # This retrive BaseAuthForm instance
                                   # with attributes from model
   @form.assign_attributes(params[:user]) # assign attributes from hash
 
@@ -61,6 +63,11 @@ In any place:
     @form.persist_model           # TODO: maybe other method name?
   end
 ```
+
+## Can I help you?
+
+Discuss the existing features and offer new features you can
+[here](https://groups.google.com/d/forum/formobject "FormObject").
 
 ## Contributing
 

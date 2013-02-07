@@ -8,7 +8,6 @@ module FormObject
     extend ActiveModel::Naming
     include Dsl
     include ActiveModel::Conversion
-    include ActiveModel::Validations
 
     # Forms are never themselves persisted
     def persisted?; false; end  
