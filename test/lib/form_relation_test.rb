@@ -21,7 +21,7 @@ class FormRelationTest < TestCase
 
   def test_model_hould_not_have_undefined_inForm_field
     base_auth_form = @model.form( :base_auth )
-    assert !base_auth_form.respond_to?( :name )
+    refute base_auth_form.respond_to?( :name )
   end
 
 end
