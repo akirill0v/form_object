@@ -76,7 +76,7 @@ module FormObject
             base.extend(version)
           end
         end
-        
+
       end
 
       module InstanceMethods
@@ -99,7 +99,7 @@ module FormObject
       end
 
       extend ClassMethods
-    
+
       def self.included(receiver)
         receiver.class_eval { extend ClassMethods }
         receiver.class_eval { include InstanceMethods }

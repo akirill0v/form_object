@@ -8,7 +8,7 @@ module FormObject
 
   class Base::Collection
     attr_reader :model, :form_classes
-    
+
     def initialize( model )
       @model = model
       @form_classes = find_form_classes

@@ -1,7 +1,7 @@
 module FormObject
   module Dsl
     module ClassMethods
-      
+
       def map_model( model_class, options = {} )
         store.map_for_model( self, model_class, options )
       end
