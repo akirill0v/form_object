@@ -13,6 +13,8 @@ gem 'aruba', github: 'cucumber/aruba'
 gem 'tconsole'
 gem 'simplecov', require: false
 gem 'coveralls', require: false
+gem 'guard'
+gem 'guard-minitest'
 
 group :test do
   gem 'sqlite3'
